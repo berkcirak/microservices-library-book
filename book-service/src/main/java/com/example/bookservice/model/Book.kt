@@ -1,4 +1,4 @@
-package com.example.book_service.model
+package com.example.bookservice.model
 
 import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
@@ -14,5 +14,10 @@ data class Book @JvmOverloads constructor(
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     val id: String? = "",
     val title: String,
-    val book
-)
+    val bookYear: String,
+    val author: String,
+    val pressName: String,
+    val isbn: String
+){
+    constructor(): this("", "", "", "","","")
+}
