@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @RestController
@@ -25,6 +26,12 @@ public class BookController {
         return ResponseEntity.ok(bookService.getAllBooks());
     }
 
-
-
+    @GetMapping("/isbn/{isbn}")
+    public ResponseEntity<BookIdDto> getBookByIsbn(@PathVariable @NotEmpty String isbn){
+        return ResponseEntity.ok(bookService.findByIsbn(isbn));
+    }
+    @GetMapping("/book/{id}")
+    public ResponseEntity<BookDto> getBookById(@PathVariable @NotEmpty String id){
+        return ResponseEntity.ok(bookService.findBookDetailsById(id));
+    }
 }
