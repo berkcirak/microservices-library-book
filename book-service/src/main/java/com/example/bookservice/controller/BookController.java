@@ -4,6 +4,7 @@ import com.example.bookservice.dto.BookDto;
 import com.example.bookservice.dto.BookIdDto;
 import com.example.bookservice.service.BookService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/book")
+@Validated
 public class BookController {
 
     private final BookService bookService;

@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
+
 public class BookServiceApplication implements CommandLineRunner {
 
 	private final BookRepository bookRepository;
