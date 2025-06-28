@@ -1,4 +1,4 @@
-package com.example.library_service.dto
+package com.example.libraryservice.dto
 
 data class LibraryDto @JvmOverloads constructor(
     val id: String,

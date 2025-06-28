@@ -1,4 +1,4 @@
-package com.example.library_service.exception;
+package com.example.libraryservice.exception;
 
 public class LibraryNotFoundException extends RuntimeException {
     public LibraryNotFoundException(String s) {

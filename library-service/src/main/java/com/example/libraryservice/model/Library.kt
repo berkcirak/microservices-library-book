@@ -1,4 +1,4 @@
-package com.example.library_service.model
+package com.example.libraryservice.model
 
 import jakarta.persistence.Column
 import jakarta.persistence.ElementCollection
@@ -17,6 +17,5 @@ data class Library @JvmOverloads constructor(
 
     @ElementCollection
     val userBook: List<String> = ArrayList()
-
 
 )
