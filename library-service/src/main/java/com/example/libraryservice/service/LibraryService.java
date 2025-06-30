@@ -27,13 +27,12 @@ public class LibraryService {
         LibraryDto libraryDto = new LibraryDto(library.getId(),
                 library.getUserBook()
                         .stream()
-                        .map(bookServiceClient::getBookById)
-                        .map(ResponseEntity::getBody)
+                        .map(book -> bookServiceClient.getBookById(book).getBody())
                         .collect(Collectors.toList()));
         return libraryDto;
     }
     public LibraryDto createLibrary(){
-        Library newLibrary =libraryRepository.save(new Library());
+        Library newLibrary = libraryRepository.save(new Library());
         return new LibraryDto(newLibrary.getId());
     }
     public void addBookToLibrary(AddBookRequest request){

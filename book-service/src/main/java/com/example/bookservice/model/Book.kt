@@ -19,5 +19,6 @@ data class Book @JvmOverloads constructor(
     val pressName: String,
     val isbn: String
 ){
-    constructor(): this("", "", "", "","","")
+    constructor() : this("","","","","","") {}
+
 }

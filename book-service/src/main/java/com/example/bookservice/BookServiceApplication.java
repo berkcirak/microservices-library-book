@@ -31,7 +31,7 @@ public class BookServiceApplication implements CommandLineRunner {
 		List<Book> bookList = bookRepository.saveAll(Arrays.asList(book1, book2, book3));
 		// Eklenen kitapları konsola yazdırma (burayı ekledik)
 		System.out.println("Veritabanına eklenen kitaplar:");
-		bookList.forEach(book -> System.out.println(book.getTitle() + " - " + book.getAuthor()));
+		bookList.forEach(book -> System.out.println(book.getTitle() + " - " + book.getAuthor() + " - " + book.getId()+ " - " + book.getIsbn()));
 
 	}
 }

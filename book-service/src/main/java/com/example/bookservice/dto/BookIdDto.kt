@@ -7,8 +7,8 @@ data class BookIdDto @JvmOverloads constructor(
 
     companion object {
         @JvmStatic
-        fun convert(id: String, isbn: String): BookIdDto {
-            return BookIdDto(id, isbn)
+        fun convert(bookId: String, isbn: String): BookIdDto {
+            return BookIdDto(bookId, isbn)
         }
     }
 }

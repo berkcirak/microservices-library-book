@@ -25,7 +25,7 @@ public class BookService {
                 .collect(Collectors.toList());
     }
     public BookIdDto findByIsbn(String isbn){
-        return bookRepository.findBookByIsbn(isbn)
+        return bookRepository.getBookByIsbn(isbn)
                 .map(book -> new BookIdDto(book.getId(), book.getIsbn()))
                 .orElseThrow(() -> new BookNotFoundException("Book could not found by isbn: "+ isbn));
     }
