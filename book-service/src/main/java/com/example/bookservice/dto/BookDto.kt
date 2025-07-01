@@ -2,6 +2,7 @@ package com.example.bookservice.dto
 
 import com.example.bookservice.model.Book
 
+
 data class BookDto @JvmOverloads constructor(
     val id: BookIdDto? = null,
     val title: String,
