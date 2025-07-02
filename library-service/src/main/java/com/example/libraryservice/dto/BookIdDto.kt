@@ -1,5 +1,4 @@
 package com.example.libraryservice.dto
-
 data class BookIdDto @JvmOverloads constructor(
     val bookId: String? = "",
     val isbn: String? = ""

@@ -17,7 +17,7 @@ public interface BookServiceClient {
 
     @GetMapping("/isbn/{isbn}")
     @CircuitBreaker(name = "getBookByIsbnCircuitBreaker", fallbackMethod = "getBookFallback")
-    ResponseEntity<BookIdDto> getBookByIsbn(@PathVariable String isbn);
+    ResponseEntity<BookIdDto> getBookByIsbn(@PathVariable(value = "isbn") String isbn);
 
     default ResponseEntity<BookIdDto> getBookFallback(String isbn, Exception exception){
         logger.info("Book not found by isbn: " + isbn + ", returning default BookDto object");
@@ -25,7 +25,7 @@ public interface BookServiceClient {
     }
     @GetMapping("/book/{bookId}")
     @CircuitBreaker(name = "getBookByIdCircuitBreaker", fallbackMethod = "getBookByIdFallback")
-    ResponseEntity<BookDto> getBookById(@PathVariable String bookId);
+    ResponseEntity<BookDto> getBookById(@PathVariable(value = "bookId") String bookId);
 
     default ResponseEntity<BookDto> getBookByIdFallback(String bookId, Exception exception){
         logger.info("Book not found by id " + bookId + ", returning default BookDto object");
